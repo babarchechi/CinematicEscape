@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book & Visit | The Cinematic Escape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+    <div class="logo">🎬 The Cinematic Escape</div>
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link">Rooms</a>
+        <a href="book.html" class="nav-link active">Book & Visit</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+</header>
+
+<main>
+    <section class="section">
+        <div class="section-inner">
+            <h1>Book Your Escape</h1>
+            <p>
+                Fill out the form below to request a game time. For school events, birthdays, or
+                large groups, you can also call or email us directly.
+            </p>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section-alt">
+        <div class="steps-grid">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>Pick Your Room</h3>
+                <p>Choose one of our four movie-inspired rooms that matches your group size and scare level.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>Choose a Time</h3>
+                <p>Select your preferred date and start time. We’ll confirm by email or text.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>Arrive 15 Minutes Early</h3>
+                <p>Check in, hit the vending machines, and get the rules before your timer starts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section">
+        <div class="section-inner">
+            <h2>Pricing</h2>
+            <div class="pricing-grid">
+                <div class="card pricing-card" data-plan="Students">
+                    <h3>Students</h3>
+                    <p class="price">$18 <span>/ person</span></p>
+                    <p class="note">With valid student ID</p>
+                </div>
+                <div class="card pricing-card featured" data-plan="Standard">
+                    <h3>Standard</h3>
+                    <p class="price">$22 <span>/ person</span></p>
+                    <p class="note">Most popular</p>
+                </div>
+                <div class="card pricing-card" data-plan="Group Deal">
+                    <h3>Group Deal</h3>
+                    <p class="price">$19 <span>/ person</span></p>
+                    <p class="note">Groups of 6+ players</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section class="section section-alt">
+        <div class="section-inner form-wrapper">
+            <h2>Request a Booking</h2>
+            <p id="selected-plan" class="selected-plan"></p>
+
+            <form id="booking-form" class="booking-form">
+                <div class="form-row">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="group-size">Group Size</label>
+                    <input type="number" id="group-size" min="2" max="10" required>
+                </div>
+                <div class="form-row">
+                    <label for="plan">Pricing Option</label>
+                    <input type="text" id="plan" readonly placeholder="Click a pricing option above">
+                </div>
+                <div class="form-row">
+                    <label for="room">Preferred Room</label>
+                    <select id="room" required>
+                        <option value="">Select a room</option>
+                        <option>The Final Cut</option>
+                        <option>Detention After Dark</option>
+                        <option>The Forgotten Lab</option>
+                        <option>Apartment 13B</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-row">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+                <p id="form-message" class="form-message" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT INFO -->
+    <section class="section">
+        <div class="section-inner two-column">
+            <div>
+                <h2>Location & Hours</h2>
+                <p><strong>Address:</strong> 1234 Escape Lane, Yuba City, CA</p>
+                <p><strong>Hours:</strong> Fri–Sun 2 PM – 11 PM, Weekdays by reservation</p>
+            </div>
+            <div>
+                <h2>Contact</h2>
+                <p><strong>Phone:</strong> (530) 555-1313</p>
+                <p><strong>Email:</strong> info@cinematicescape.fake</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>&copy; 2025 The Cinematic Escape. All rights reserved.</p>
+        <p>Book now and see if you can make it to the end credits.</p>
+    </div>
+</footer>
+</body>
+</html>

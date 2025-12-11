@@ -1,0 +1,472 @@
+/* BASIC RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #050509;
+    color: #f5f5f5;
+    line-height: 1.5;
+}
+
+/* GLOBAL LAYOUT */
+.section {
+    padding: 3rem 1.5rem;
+}
+
+.section-alt {
+    background: #0d0d14;
+}
+
+.section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.two-column {
+    display: grid;
+    gap: 2rem;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* HEADER & NAV */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background: rgba(5, 5, 9, 0.95);
+    border-bottom: 1px solid rgba(255, 0, 72, 0.4);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #ff0048;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active {
+    background: #ff0048;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 75vh;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: #fff;
+    padding: 0 1.5rem;
+    background-image: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.6),
+            rgba(5,5,9,0.95)
+        ),
+        url("images/apartmentghost-room.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,0,72,0.35), transparent 55%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 650px;
+    z-index: 1;
+}
+
+.hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    color: #ff96b7;
+    margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero-text {
+    font-size: 1rem;
+    max-width: 90%;
+    margin-bottom: 1.5rem;
+    color: #f1f1f1;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+}
+
+.btn-primary {
+    background: #ff0048;
+    color: #fff;
+    box-shadow: 0 0 18px rgba(255,0,72,0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 25px rgba(255,0,72,0.6);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #f5f5f5;
+    border-color: rgba(255,255,255,0.5);
+}
+
+.btn-ghost:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 0.75rem;
+}
+
+ul {
+    list-style: none;
+}
+
+/* CARDS & GRIDS */
+.cards-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.card {
+    background: #101018;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.room-card h2 {
+    margin-bottom: 0.25rem;
+}
+
+.room-tagline {
+    font-size: 0.9rem;
+    color: #ff96b7;
+    margin-bottom: 0.5rem;
+}
+
+.room-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: #d0d0d0;
+    margin-bottom: 0.75rem;
+}
+
+/* FEATURE STRIP */
+.features-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.feature {
+    padding: 1.25rem 1.5rem;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #101018, #1a0c16);
+    border: 1px solid rgba(255,0,72,0.3);
+}
+
+/* CHECKLIST */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li::before {
+    content: "✔";
+    margin-right: 0.4rem;
+    color: #5cff9b;
+}
+
+/* CTA SECTION */
+.section-cta {
+    background: radial-gradient(circle at top, #ff0048 0, #050509 55%);
+}
+
+/* STEPS */
+.steps-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.step {
+    position: relative;
+    padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+    border-radius: 14px;
+    background: #101018;
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.step-number {
+    position: absolute;
+    left: 1rem;
+    top: 1.1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: #ff0048;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* PRICING */
+.pricing-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+}
+
+.pricing-card {
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+    cursor: pointer;
+    transition: border 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(255,0,72,0.35);
+}
+
+.pricing-card.featured {
+    border-color: rgba(255,0,72,0.7);
+    box-shadow: 0 0 22px rgba(255,0,72,0.45);
+}
+
+.pricing-card.selected {
+    border-color: rgba(92,255,155,0.8);
+    box-shadow: 0 0 24px rgba(92,255,155,0.6);
+}
+
+.price {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.price span {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.note {
+    font-size: 0.85rem;
+    color: #d0d0d0;
+}
+
+.tiny-text {
+    font-size: 0.75rem;
+    color: #b3b3b3;
+    margin-top: 0.75rem;
+}
+
+/* FORM */
+.form-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.booking-form {
+    margin-top: 1rem;
+}
+
+.form-row {
+    margin-bottom: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    padding: 0.55rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: #050509;
+    color: #f5f5f5;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #ff0048;
+    outline-offset: 1px;
+}
+
+.form-message {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.selected-plan {
+    font-size: 0.9rem;
+    color: #5cff9b;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* FOOTER */
+.site-footer {
+    padding: 1.5rem 1.5rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: #050509;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 0.85rem;
+    color: #c7c7c7;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .two-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        text-align: left;
+        align-items: flex-end;
+        padding-bottom: 3.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        position: absolute;
+        right: 1.5rem;
+        top: 3.3rem;
+        flex-direction: column;
+        background: #050509;
+        padding: 0.75rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        display: none;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
